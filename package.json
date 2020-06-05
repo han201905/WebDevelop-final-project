@@ -1,0 +1,31 @@
+{
+  "name": "handlebars-templating",
+  "version": "1.0.0",
+  "description": "Dynamic content using Handlebars templates",
+  "main": "server.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "start": "node server.js",
+    "dev": "nodemon server.js",
+    "build": "handlebars views/partials/photoCard.handlebars -f public/photoCardTemplate.js",
+    "prestart": "npm run build"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/osu-cs290-sp20/handlebars-templating.git"
+  },
+  "author": "Hess <hessro@oregonstate.edu>",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/osu-cs290-sp20/handlebars-templating/issues"
+  },
+  "homepage": "https://github.com/osu-cs290-sp20/handlebars-templating#readme",
+  "dependencies": {
+    "express": "^4.17.1",
+    "express-handlebars": "^4.0.4",
+    "handlebars": "^4.7.6"
+  },
+  "devDependencies": {
+    "nodemon": "^2.0.4"
+  }
+}
