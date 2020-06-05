@@ -9,7 +9,7 @@ var app = express();
 
 var port = 8000;
 
-app.engine('handlebars', exphbs({ defaultLayout: null }));
+app.engine('handlebars', exphbs({ defaultLayout: 'main' }));
 app.set('view engine', 'handlebars');
 
 app.use(express.static('public'));
@@ -18,17 +18,17 @@ app.get('/people', function (req, res, next) {
   res.status(200).sendFile(__dirname + '/public/people.html');
 });
 
-var availablePeople = [
-  'luke',
-  'leia',
-  'rey',
-  'finn',
-  'r2d2'
-];
+// var availablePeople = [
+//   'luke',
+//   'leia',
+//   'rey',
+//   'finn',
+//   'r2d2'
+// ];
 
 app.get('/people/:person', function (req, res, next) {
   var person = req.params.person.toLowerCase();
-  if (availablePeople.indexOf(person) >= 0) {
+  if (peopleData[person]) {
     // res.status(200).sendFile(
     //   __dirname + '/public/people/' + person + '.html'
     // );
