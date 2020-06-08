@@ -9,14 +9,32 @@ body {
     padding-top: 80px;
 }
 
-.struct-content{
-    background-color: coral;
-}
-
 .main-container{
     text-align:center;
 }
 
 header{
     height: 200px;
+}
+
+.navbar {
+    background-color: #fff;
+    font-size: 18px;
+    line-height: 22px;
+}
+  
+.navlist {
+    margin: 0 0 0 20px;
+    padding: 0;
+    text-align:center;
+}
+  
+.navitem {
+    display: inline-block;
+}
+
+.navlink a {
+    padding: 8px 10px;
+    display: inline-block;
+    color: black;
 }
