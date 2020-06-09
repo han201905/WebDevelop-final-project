@@ -1,19 +1,19 @@
 body {
     font-family: 'Mukta', sans-serif;
     margin: 0;
-    background-color:white;
-  }
+    background-color: white;
+}
 
 .site-title {
-    text-align:center;
+    text-align: center;
     padding-top: 80px;
 }
 
-.main-container{
-    text-align:center;
+.main-container {
+    text-align: center;
 }
 
-header{
+header {
     height: 200px;
 }
 
@@ -22,13 +22,13 @@ header{
     font-size: 18px;
     line-height: 22px;
 }
-  
+
 .navlist {
     margin: 0 0 0 20px;
     padding: 0;
-    text-align:center;
+    text-align: center;
 }
-  
+
 .navitem {
     display: inline-block;
 }
@@ -39,31 +39,32 @@ header{
     color: black;
     text-decoration: none;
 }
-p{
-    text-align:center;
+
+p {
+    text-align: center;
 }
 
-.home-photo{
+.home-photo {
     max-width: 500px;
     max-height: 500px;
 }
 
-.image-container{
+.image-container {
     position: relative;
-    top:30px;
+    top: 30px;
 }
 
-#datetime{
-    position:relative;
-    top:70px;
+#datetime {
+    position: relative;
+    top: 70px;
 }
 
-.sentence{
-    position:relative;
-    top:70px;
+.sentence {
+    position: relative;
+    top: 70px;
 }
 
-.record{
+.record {
     flex: 1 30%;
     background-color: #fff;
     border: 1px solid white;
@@ -72,15 +73,164 @@ p{
     margin: 0px;
 }
 
-.breakfast-photo-img{
+.breakfast-photo-img {
     max-height: 100px;
 }
 
-.record-page{
+.record-page {
     display: flex;
-    flex-wrap:wrap;
+    flex-wrap: wrap;
 }
 
-.back{
-    text-align:center;
+.back {
+    text-align: center;
+}
+
+#add-photo-button {
+    position: fixed;
+    right: 30px;
+    bottom: 30px;
+    height: 60px;
+    width: 60px;
+    border: none;
+    border-radius: 30px;
+    font-size: 30px;
+    background-color: #ee5e4b;
+    color: #fff;
+    cursor: pointer;
+    box-shadow: 4px 4px 12px rgba(0, 0, 0, 0.25);
+}
+
+#add-photo-button:hover,
+#add-photo-button:focus {
+    right: 27px;
+    bottom: 27px;
+    height: 66px;
+    width: 66px;
+    border-radius: 33px;
+    font-size: 36px;
+}
+
+#add-photo-button:focus {
+    outline: none;
+}
+
+
+/*
+ * Modal stuff
+ */
+
+#modal-backdrop {
+    position: fixed;
+    top: 0;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    z-index: 1000;
+    background-color: rgba(0, 0, 0, 0.85);
+}
+
+#add-photo-modal {
+    position: fixed;
+    top: 0;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    z-index: 1010;
+    overflow: scroll;
+}
+
+.hidden {
+    display: none;
+}
+
+.action-button {
+    font-size: 20px;
+    color: white;
+    padding: 10px;
+    background-color: #000;
+    border: 1px solid #ababab;
+    border-radius: 5px;
+    font-weight: lighter;
+    cursor: pointer;
+}
+
+.action-button:hover {
+    background-color: #e78477;
+    border-color: #333;
+}
+
+.modal-dialog {
+    width: auto;
+    max-width: 600px;
+    min-width: 350px;
+    min-height: 300px;
+    margin: 40px auto;
+    background-color: #fff;
+    border-radius: 15px;
+}
+
+.modal-header {
+    position: relative;
+    padding: 10px 20px;
+}
+
+.modal-header h3 {
+    margin: 0;
+    font-size: 28px;
+}
+
+#modal-close {
+    position: absolute;
+    right: 10px;
+    top: 5px;
+    font-size: 24px;
+    border: none;
+    background: none;
+    padding: 0;
+    cursor: pointer;
+}
+
+.modal-body {
+    padding: 20px;
+}
+
+.photo-input-element {
+    display: flex;
+    align-items: center;
+    font-size: 20px;
+    margin: 10px 0;
+}
+
+.photo-input-element>label {
+    font-weight: 600;
+    flex: 1 75px;
+    margin-right: 10px;
+}
+
+.photo-input-element input {
+    flex: 6 200px;
+    padding: 8px;
+    font-size: 20px;
+    border: 1px solid #aaa;
+}
+
+.modal-footer {
+    display: flex;
+    justify-content: flex-end;
+    padding: 10px 10px 20px 10px;
+}
+
+#modal-cancel,
+#modal-accept {
+    margin-right: 20px;
+}
+
+#modal-cancel {
+    color: #333;
+    background-color: #fff;
+}
+
+#modal-cancel:hover {
+    background-color: #eee;
 }
