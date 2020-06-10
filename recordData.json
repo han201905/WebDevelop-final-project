@@ -1,0 +1,85 @@
+[
+    {
+        "id":1,
+        "url":"https://live.staticflickr.com/7022/6674424791_f41631cb2d_b.jpg",
+        "name":"Granola","date":"2020/04/01"
+    },
+    {
+        "id":2,
+        "name":"Oatmeal",
+        "date":"2020-04-03",
+        "url":"http://localhost:8000/uploads/1591780647891-2.jpg"
+    },
+    {
+        "id":3,
+        "name":"Begal with cream cheese",
+        "date":"2020-04-06",
+        "url":"http://localhost:8000/uploads/1591780669321-3.jpg"
+    },
+    {
+        "id":4,
+        "name":"Granola and yogurt",
+        "date":"2020-04-10",
+        "url":"http://localhost:8000/uploads/1591780699150-4.jpg"
+    },
+        
+    {
+        "id":5,
+        "name":"Toast and eggs",
+        "date":"2020-06-13",
+        "url":"http://localhost:8000/uploads/1591780739423-5.jpg"
+    },
+    {
+        "id":6,
+        "name":"bagel and eggs",
+        "date":"2020-06-06",
+        "url":"http://localhost:8000/uploads/1591780763655-6.jpg"
+    },
+    {
+        "id":7,
+        "name":"eggs and sandwich",
+        "date":"2020-04-17",
+        "url":"http://localhost:8000/uploads/1591780783748-7.jpg"
+    },
+    {
+        "id":8,
+        "name":"peanut butter and jelly",
+        "date":"2020-04-20",
+        "url":"http://localhost:8000/uploads/1591780801748-8.jpg"
+    },
+    {
+        "id":9,
+        "name":"peanut butter and jelly",
+        "date":"2020-04-28",
+        "url":"http://localhost:8000/uploads/1591780849211-9.jpg"
+    },
+    {
+        "id":10,
+        "name":"peanut butter and jelly",
+        "date":"2020-05-04",
+        "url":"http://localhost:8000/uploads/1591780876701-10.jpg"
+    },
+    {
+        "id":11,
+        "name":"pancake",
+        "date":"2020-05-08",
+        "url":"http://localhost:8000/uploads/1591780896165-11.jpg"
+    },
+    {
+        "id":12,
+        "name":"bagel with cream cheese and scrambled egg",
+        "date":"2020-05-13",
+        "url":"http://localhost:8000/uploads/1591780919076-12.jpg"
+    },
+    {
+        "id":13,
+        "name":"egg sandwich on bagel",
+        "date":"2020-05-15",
+        "url":"http://localhost:8000/uploads/1591780938174-13.jpg"
+    },
+    {
+        "id":14,
+        "name":"Peanut butter and jelly",
+        "date":"2020-05-14",
+        "url":"http://localhost:8000/uploads/1591780962126-14.jpg"
+    }]
