@@ -1,257 +1,289 @@
-<!DOCTYPE html>
+﻿<!DOCTYPE html>
 <html>
-
 <head>
-
     <meta charset="utf-8">
     <title>Final project</title>
-
     <link href="https://fonts.googleapis.com/css2?family=Mukta:wght@200&display=swap" rel="stylesheet">
-
     <link rel="stylesheet" href="style.css" media="screen">
+    <!--<script src="index.js" charset="utf-8" defer></script>-->
+    <script src="handlebars-v4.0.11.js"></script>
+    <style>
 
-    <script src="index.js" charset="utf-8" defer></script>
 
+        .modalWindow {
+            right: 0;
+            bottom: 0;
+            left: 0;
+            z-index: 999;
+            visibility: hidden;
+            opacity: 0;
+            pointer-events: none;
+            position: fixed;
+            background-color: rgba(255, 0, 0, 0.25);
+            top: 0;
+            transition: all 0.8s;
+        }
+
+            .modalWindow:target {
+                pointer-events: auto;
+                visibility: visible;
+                opacity: 1;
+            }
+
+            .modalWindow > div {
+                width: 400px;
+                position: absolute;
+                top: 50%;
+                left: 50%;
+                -webkit-transform: translate(-50%, -50%);
+                transform: translate(-50%, -50%);
+                padding: 2em;
+                background: #ffffff;
+            }
+
+            .modalWindow header {
+                font-weight: bold;
+            }
+
+            .modalWindow h1 {
+                font-size: 150%;
+                margin: 0 0 15px;
+            }
+
+        .modalClose {
+            font-size: 80%;
+            position: absolute;
+            right: 0;
+            text-align: center;
+            color: #aaa;
+            line-height: 50px;
+            top: 0;
+            width: 70px;
+            text-decoration: none;
+        }
+
+            .modalClose:hover {
+                color: orangered;
+            }
+
+        #open-modal label {
+            display: inline-block;
+            width: 180px;
+        }
+
+        .btnSub {
+            float: right;
+        }
+
+        .navlink {
+            cursor: pointer;
+        }
+    </style>
 </head>
-
 <body>
 
     <header>
         <h1 class="site-title">MY DAILY BREAKFAST RECORD</h1>
         <nav class="navbar">
             <ul class="navlist">
-                <li class="navitem navlink"><a href="home.html">HOME</a></li>
-                <li class="navitem navlink"><a href="record.html">RECORD</a></li>
-                <li class="navitem navlink"><a href="about.html">ABOUT</a></li>
-                <li class="navitem navlink"><a href="home.html">BACK</a></li>
+                <li class="navitem navlink"><a href="/home">HOME</a></li>
+                <li class="navitem navlink"><a href="/record">RECORD</a></li>
+                <li class="navitem navlink"><a href="/about">ABOUT</a></li>
             </ul>
         </nav>
-
     </header>
-
-    <main class="record-page">
-        <div class="photo-card-container">
-            <section class="record">
-                <div class="img-container">
-                    <img class="breakfast-photo-img" src="https://live.staticflickr.com/7022/6674424791_f41631cb2d_b.jpg" />
-                </div>
-                <div class="caption">
-                    Granola
-                </div>
-                <div class="time">
-                    2020/04/01
-                </div>
-            </section>
-
-            <section class="record">
-                <div class="img-container">
-                    <img class="breakfast-photo-img" src="https://live.staticflickr.com/158/406043490_29c0b11b6e_b.jpg" />
-                </div>
-                <div class="caption">
-                    Oatmeal
-                </div>
-                <div class="time">
-                    2020/04/03
-                </div>
-            </section>
-
-            <section class="record">
-                <div class="img-container">
-                    <img class="breakfast-photo-img" src="https://pixfeeds.com/images/recipes/sandwiches/1280-493161146-toasted-bagel-with-cream-cheese.jpg" />
-                </div>
-                <div class="caption">
-                    Begal with cream cheese
-                </div>
-                <div class="time">
-                    2020/04/06
-                </div>
-            </section>
-
-            <section class="record">
-                <div class="img-container">
-                    <img class="breakfast-photo-img" src="https://live.staticflickr.com/37/123803114_d0ff185a5e_b.jpg" />
-                </div>
-                <div class="caption">
-                    Granola and yogurt
-                </div>
-                <div class="time">
-                    2020/04/10
-                </div>
-            </section>
-
-            <section class="record">
-                <div class="img-container">
-                    <img class="breakfast-photo-img" src="https://live.staticflickr.com/7591/16623503860_aa82889bb1_b.jpg" />
-                </div>
-                <div class="caption">
-                    Toast and eggs
-                </div>
-                <div class="time">
-                    2020/04/13
-                </div>
-            </section>
-
-            <section class="record">
-                <div class="img-container">
-                    <img class="breakfast-photo-img" src="https://live.staticflickr.com/7426/16387927947_f16690cfef_b.jpg" />
-                </div>
-                <div class="caption">
-                    bagel and eggs
-                </div>
-                <div class="time">
-                    2020/04/15
-                </div>
-            </section>
-
-            <section class="record">
-                <div class="img-container">
-                    <img class="breakfast-photo-img" src="https://live.staticflickr.com/7388/27375118242_f404cfb9c0_b.jpg" />
-                </div>
-                <div class="caption">
-                    eggs and sandwich
-                </div>
-                <div class="time">
-                    2020/04/17
-                </div>
-            </section>
-
-            <section class="record">
-                <div class="img-container">
-                    <img class="breakfast-photo-img" src="https://live.staticflickr.com/2775/4314177511_a5b1f83ec0_z.jpg" />
-                </div>
-                <div class="caption">
-                    peanut butter and jelly
-                </div>
-                <div class="time">
-                    2020/04/20
-                </div>
-            </section>
-
-            <section class="record">
-                <div class="img-container">
-                    <img class="breakfast-photo-img" src="https://live.staticflickr.com/7456/11120683916_92c885de17_b.jpg" />
-                </div>
-                <div class="caption">
-                    peanut butter and jelly
-                </div>
-                <div class="time">
-                    2020/04/29
-                </div>
-            </section>
-
-            <section class="record">
-                <div class="img-container">
-                    <img class="breakfast-photo-img" src="https://live.staticflickr.com/6086/6121212785_947f215ff4_b.jpg" />
-                </div>
-                <div class="caption">
-                    peanut butter and jelly
-                </div>
-                <div class="time">
-                    2020/05/04
-                </div>
-            </section>
-
-            <section class="record">
-                <div class="img-container">
-                    <img class="breakfast-photo-img" src="https://live.staticflickr.com/7006/6493218193_a94ec7a82d_b.jpg" />
-                </div>
-                <div class="caption">
-                    pancake
-                </div>
-                <div class="time">
-                    2020/05/08
-                </div>
-            </section>
-
-            <section class="record">
-                <div class="img-container">
-                    <img class="breakfast-photo-img" src="https://live.staticflickr.com/2917/33897921316_f6e6b1b27c_b.jpg" />
-                </div>
-                <div class="caption">
-                    bagel with cream cheese and scrambled egg
-                </div>
-                <div class="time">
-                    2020/05/13
-                </div>
-            </section>
-
-            <section class="record">
-                <div class="img-container">
-                    <img class="breakfast-photo-img" src="https://live.staticflickr.com/7541/16246326286_a5b0994928_b.jpg" />
-                </div>
-                <div class="caption">
-                    egg sandwich on bagel
-                </div>
-                <div class="time">
-                    2020/05/15
-                </div>
-            </section>
-
-            <section class="record">
-                <div class="img-container">
-                    <img class="breakfast-photo-img" src="https://live.staticflickr.com/3749/9498449778_7a3c6986c3_b.jpg" />
-                </div>
-                <div class="caption">
-                    Peanut butter and jelly
-                </div>
-                <div class="time">
-                    2020/05/20
-                </div>
-            </section>
-
-            <section class="record">
-                <div class="img-container">
-                    <img class="breakfast-photo-img" src="https://live.staticflickr.com/65535/49086524117_23e1b09b64_b.jpg" />
-                </div>
-                <div class="caption">
-                    biscuits and cheese and fried eggs
-                </div>
-                <div class="time">
-                    2020/05/27
-                </div>
-            </section>
-        </div>
+    <main class="record-page" id="content">
 
     </main>
+    <nav class="navbar">
+        <ul class="navlist">
+            <li class="navitem navlink"><a href="/home">BACK</a></li>
+            <li class="navitem navlink" onclick="add()">CREAT</li>
+        </ul>
+    </nav>
 
-    <button type="button" id="add-photo-button"><i class="fa fa-camera"></i></button>
-
-    <div id="modal-backdrop" class="hidden"></div>
-    <div id="add-photo-modal" class="hidden">
-        <div class="modal-dialog">
-
-            <div class="modal-header">
-                <h3>Post a photo</h3>
-                <button type="button" id="modal-close" class="modal-hide-button">&times;</button>
+    <div class="container">
+        <div class="interior">
+            <a class="btn" href="#open-modal" id="openBtn"></a>
+        </div>
+    </div>
+    <div id="open-modal" class="modalWindow">
+        <div>
+            <a href="#" title="Close" class="modalClose" id="close">Close</a>
+            <h1 id="type">Add</h1>
+            <input type="hidden" id="myid" value="" />
+            <div>
+                <label>Img:</label>
+                <img class="photo photo-img" width="100" id="myImg" src="">
+                <form id="img_form" action="" method="POST" enctype="multipart/form-data">
+                    <input name="img" type="file" id="img-input" onchange="change()" style="display: block" />
+                </form>
             </div>
-
-            <div class="modal-body">
-
-                <div class="photo-input-element">
-                    <label for="photo-url-input">Photo URL</label>
-                    <input type="text" id="photo-url-input">
-                </div>
-
-                <div class="photo-input-element">
-                    <label for="photo-caption-input">Caption</label>
-                    <input type="text" id="photo-caption-input"></input>
-                </div>
-
-                <div class="photo-input-element">
-                    <label for="photo-time-input">Time</label>
-                    <input type="text" id="photo-time-input"></input>
-                </div>
-
+            <br />  <br />
+            <div style="height:30px;">
+                <label>Name:</label><input type="text" id="name" value="" />
             </div>
-
-            <div class="modal-footer">
-                <button type="button" id="modal-cancel" class="modal-hide-button action-button">Cancel</button>
-                <button type="button" id="modal-accept" class="action-button">Create Post</button>
+            <br />
+            <div>
+                <label>Date:</label><input type="date" id="date" value="" />
             </div>
-
+            <input type="button" class="btnSub" onclick="sub()" value="Submit" />
         </div>
     </div>
 
-</body>
+    <script src="https://apps.bdimg.com/libs/jquery/2.1.4/jquery.min.js"></script>
+    <script src="jquery.form.js"></script>
+    <script id="my-template" type="text/x-handlebars-template">
+        {{#each this}}
+        <section class="record">
+            <div class="img-container">
+                <img class="breakfast-photo-img" src="{{url}}" />
+            </div>
+            <div class="caption">
+                {{name}}
+            </div>
+            <div class="time">
+                {{date}}
+            </div>
+            <div>
+                <input type="button" src="{{url}}" data-id="{{id}}" name=" {{name}}" date=" {{date}}" onclick="upde(this)" value="update" />
+                <input type="button" onclick="del({{id}})" value="delete" />
+            </div>
+        </section>
+        {{/each}}
+    </script>
 
+    <script>
+        var type = "add";
+        var flag = false;
+        function add() {
+            document.getElementById("openBtn").click();
+            document.getElementById("name").value = "";
+            document.getElementById("date").value = "";
+            document.getElementById("myImg").src = "";
+            type = "add";
+        }
+
+
+
+        function upde(e) {
+            document.getElementById("openBtn").click();
+            var id = e.getAttribute("data-id");
+            var name = e.getAttribute("name");
+            var date = e.getAttribute("date");
+            var src = e.getAttribute("src");
+            document.getElementById("myid").value = id;
+            document.getElementById("name").value = name;
+            document.getElementById("date").value = date;
+            document.getElementById("myImg").src = src;
+            type = "update";
+        }
+
+        function sub() {
+            if (type == "update") {
+                var id = document.getElementById("myid").value;
+                var name = document.getElementById("name").value;
+                var date = document.getElementById("date").value;
+                var img = document.getElementById("myImg").src;
+                if (id == "" || name == "" || date == "" || img == "") {
+                    alert("Fill in the blanks in the submission");
+                    return;
+                }
+                var obj = {
+                    id: parseInt(id),
+                    name: name,
+                    date: date,
+                    url: img
+                };
+                $.ajax({
+                    url: '/update',
+                    type: 'post',
+                    data: { data: JSON.stringify(obj) },
+                    success: function (data) {
+                        loadData();
+                        document.getElementById("close").click();
+                        alert(data);
+                    },
+                });
+            } else {
+                var id = 0;
+                var name = document.getElementById("name").value;
+                var date = document.getElementById("date").value;
+                var img = document.getElementById("myImg").src;
+
+                var obj = {
+                    id: parseInt(id),
+                    name: name,
+                    date: date,
+                    url: img
+                };
+                $.ajax({
+                    url: '/add',
+                    type: 'post',
+                    data: { data: JSON.stringify(obj) },
+                    success: function (data) {
+                        loadData();
+                        document.getElementById("close").click();
+                        alert(data);
+                    },
+                });
+            }
+        }
+
+        function del(id) {
+            if (confirm("Sure to delete?")) {
+                $.ajax({
+                    url: '/del',
+                    type: 'post',
+                    data: { id: id },
+                    success: function (data) {
+                        alert(data);
+                        loadData();
+                    },
+                });
+            }
+        }
+
+        function loadData() {
+            $.ajax({
+                url: '/search',
+                type: 'get',
+                dataType: 'json',
+                contentType: "application/json",
+                success: function (data) {
+                    console.log(data);
+                    var t = $("#my-template").html();
+                    var c = Handlebars.compile(t);
+                    var h = c(JSON.parse(data));
+                    document.getElementById("content").innerHTML = h;
+                },
+            });
+        }
+        loadData();
+
+
+
+        function change() {
+            var form = $("#img_form");
+            var options = {
+                url:  '/upload/img', 
+                type: 'post',
+                success: function (data) {
+                    data = JSON.parse(data);
+                    flag = true;
+                    if (data.code == 0) {
+                        var url = data.data.url.replace("public\\", "");
+                        document.getElementById("myImg").src = url;
+                    } else {
+                        alert('fail to upload photo！');
+                    }
+                }
+            };
+            form.ajaxSubmit(options);
+        }
+
+
+    </script>
+
+</body>
 </html>

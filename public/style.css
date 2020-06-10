@@ -1,0 +1,86 @@
+body {
+    font-family: 'Mukta', sans-serif;
+    margin: 0;
+    background-color:white;
+  }
+
+.site-title {
+    text-align:center;
+    padding-top: 80px;
+}
+
+.main-container{
+    text-align:center;
+}
+
+header{
+    height: 200px;
+}
+
+.navbar {
+    background-color: #fff;
+    font-size: 18px;
+    line-height: 22px;
+}
+  
+.navlist {
+    margin: 0 0 0 20px;
+    padding: 0;
+    text-align:center;
+}
+  
+.navitem {
+    display: inline-block;
+}
+
+.navlink a {
+    padding: 8px 10px;
+    display: inline-block;
+    color: black;
+    text-decoration: none;
+}
+p{
+    text-align:center;
+}
+
+.home-photo{
+    max-width: 500px;
+    max-height: 500px;
+}
+
+.image-container{
+    position: relative;
+    top:30px;
+}
+
+#datetime{
+    position:relative;
+    top:70px;
+}
+
+.sentence{
+    position:relative;
+    top:70px;
+}
+
+.record{
+    flex: 1 30%;
+    background-color: #fff;
+    border: 1px solid white;
+    padding: 10px;
+    text-align: center;
+    margin: 0px;
+}
+
+.breakfast-photo-img{
+    max-height: 100px;
+}
+
+.record-page{
+    display: flex;
+    flex-wrap:wrap;
+}
+
+.back{
+    text-align:center;
+}
