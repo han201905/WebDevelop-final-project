@@ -1,16 +1,5 @@
 function createPhotoCard(photoURL, caption, time) {
 
-    // var photoCardContext = {
-    //     url: photoURL,
-    //     caption: caption,
-    //     time: time
-    // };
-
-    // var photoCardHtml = Handlebars.templates.photoCard(photoCardContext);
-    // console.log("== photoCardHtml:", photoCardHtml);
-
-    // return photoCardHtml;
-
     var photoCardSection = document.createElement('section');
     photoCardSection.classList.add('record');
 

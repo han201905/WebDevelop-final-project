@@ -9,8 +9,9 @@ body {
     padding-top: 80px;
 }
 
-.main-container {
-    text-align: center;
+.photo-card-container {
+    display: flex;
+    flex-wrap: wrap;
 }
 
 header {
